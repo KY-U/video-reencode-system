@@ -1,0 +1,6 @@
+Tempo de execução:108.13918972015381
+Tempo de execução:104.42539405822754
+Tempo de execução:106.64971947669983
+Tempo de execução:865.4793870449066
+Tempo de execução:850.9149296283722
+Tempo de execução:846.1771261692047
