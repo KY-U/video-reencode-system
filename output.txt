@@ -1,6 +1,70 @@
-Tempo de execução:108.13918972015381
-Tempo de execução:104.42539405822754
-Tempo de execução:106.64971947669983
-Tempo de execução:865.4793870449066
-Tempo de execução:850.9149296283722
-Tempo de execução:846.1771261692047
+Testes Codec:
+
+Testes 20 min:
+Tempo de execuï¿½ï¿½o:108.13918972015381
+Tempo de execuï¿½ï¿½o:104.42539405822754
+Tempo de execuï¿½ï¿½o:106.64971947669983
+Tempo de execuï¿½ï¿½o:865.4793870449066
+Tempo de execuï¿½ï¿½o:850.9149296283722
+Tempo de execuï¿½ï¿½o:846.1771261692047
+Tempo de execuï¿½ï¿½o:1013.4376864433289
+Tempo de execuï¿½ï¿½o:900.9952502250671
+Tempo de execuï¿½ï¿½o:950.0742239952087
+
+Testes 10 min:
+Tempo de execuï¿½ï¿½o:54.05042505264282
+Tempo de execuï¿½ï¿½o:52.49200749397278
+Tempo de execuï¿½ï¿½o:56.819228649139404
+Tempo de execuï¿½ï¿½o:439.0598258972168
+Tempo de execuï¿½ï¿½o:420.7070083618164
+Tempo de execuï¿½ï¿½o:392.88586235046387
+Tempo de execuï¿½ï¿½o:463.64340591430664
+Tempo de execuï¿½ï¿½o:462.5801339149475
+Tempo de execuï¿½ï¿½o:501.95646715164185
+
+Testes 5 min:
+Tempo de reencode de h264_vp8.webm:28.830614805221558
+Tempo de reencode de h264+_vp8.webm:25.45812201499939
+Tempo de reencode de h265_vp8.webm:25.907044887542725
+Tempo de reencode de h264_vp9.webm:202.41750717163086
+Tempo de reencode de h264+_vp9.webm:207.23582458496094
+Tempo de reencode de h2654_vp9.webm:215.35550045967102
+Tempo de reencode de h264_av1.webm:219.64104533195496
+Tempo de reencode de h264+_av1.webm:153.814768075943
+Tempo de reencode de h265_av1.webm:165.2528018951416
+
+Testes BitRate VariÃ¡vel Sem Max Rate:
+
+Tempo de reencode de h265_av1_1.webm: 221.55857753753662
+Tempo de reencode de h265_av1_2.webm: 215.401757478714
+Tempo de reencode de h265_av1_3.webm: 229.59600162506104
+Tempo de reencode de h265_av1_4.webm: 233.40600180625916
+Tempo de reencode de h265_av1_5.webm: 242.84999990463257
+Tempo de reencode de h265_av1_6.webm: 243.77953362464905
+Tempo de reencode de h265_av1_7.webm: 250.5932650566101
+Tempo de reencode de h265_av1_8.webm: 252.2100338935852
+Tempo de reencode de h265_av1_9.webm: 247.4989993572235
+Tempo de reencode de h265_av1_10.webm: 246.93000197410583
+
+Testes BitRate VariÃ¡vel Com Max Rate 400k:
+Tempo de reencode de h265_av1_1.webm: 251.29001665115356
+Tempo de reencode de h265_av1_2.webm: 220.83166980743408
+Tempo de reencode de h265_av1_3.webm: 261.83457016944885
+Tempo de reencode de h265_av1_4.webm: 259.6279158592224
+Tempo de reencode de h265_av1_5.webm: 271.81042289733887
+Tempo de reencode de h265_av1_6.webm: 271.70312666893005
+Tempo de reencode de h265_av1_7.webm: 279.7926049232483
+Tempo de reencode de h265_av1_8.webm: 278.4764971733093
+Tempo de reencode de h265_av1_9.webm: 272.5434834957123
+Tempo de reencode de h265_av1_10.webm: 251.09762239456177
+
+Testes BitRate VariÃ¡vel Com Max Rate 300k: deu ruim
+Tempo de reencode de h265_av1_1.webm: 255.8610076904297 Tamanho: 0.003521849401295185 Mb
+Tempo de reencode de h265_av1_2.webm: 249.11376786231995 Tamanho: 0.003521849401295185 Mb
+Tempo de reencode de h265_av1_3.webm: 262.6746451854706 Tamanho: 0.007030523382127285 Mb
+Tempo de reencode de h265_av1_4.webm: 263.32072377204895 Tamanho: 0.007030523382127285 Mb
+Tempo de reencode de h265_av1_5.webm: 271.8219270706177 Tamanho: 0.010521919466555119 Mb
+Tempo de reencode de h265_av1_6.webm: 271.7998275756836 Tamanho: 0.010521919466555119 Mb
+Tempo de reencode de h265_av1_7.webm: 268.2221291065216 Tamanho: 0.010506263002753258 Mb
+Tempo de reencode de h265_av1_8.webm: 264.12300181388855 Tamanho: 0.010506263002753258 Mb
+Tempo de reencode de h265_av1_9.webm: 246.78499841690063 Tamanho: 0.010523046366870403 Mb

@@ -1,7 +1,12 @@
 #vídeos
 output/
 videos/
-
+10_trimmed_videos/
+10_trimmed_output/
+5_trimmed_videos/
+5_trimmed_output/
+5_refinamento_output/
+5_refinamento_output2/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -47,10 +47,31 @@ def calculate_video_psnr(original_video_path, compressed_video_path):
 
 #caminhos das pastas
 current_path = os.path.dirname(os.path.abspath(__file__))
-input_path = os.path.join(current_path, "..", "videos")
-output_path = os.path.join(current_path, "..", "output")
+
+#input_path = os.path.join(current_path, "..", "videos")
+#output_path = os.path.join(current_path, "..", "output")
+
+input_path = os.path.join(current_path, "..", "5_trimmed_videos")
+output_path = os.path.join(current_path, "..", "5_refinamento_output2")
+
+video_input_path = os.path.join(input_path, "h265.mp4")
+
+for i in range(1, 11):
+    file_name = f"h265_av1_{i}.webm"
+    video_output_path = os.path.join(output_path, file_name)
+    average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
+    print(f"Média PSNR {i}: {average_psnr_value} dB")
 
 
+'''
+input_path = os.path.join(current_path, "..", "5_trimmed_videos")
+output_path = os.path.join(current_path, "..", "5_refinamento_output")
+video_input_path = os.path.join(input_path, "h265.mp4")
+video_output_path = os.path.join(output_path, "h265_av1_1.webm")
+average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
+'''
+
+'''
 #TESTES VP8
 #H264 - VP8
 video_input_path = os.path.join(input_path, "h264.mp4")
@@ -85,24 +106,27 @@ print(f"Média PSNR: {average_psnr_value} dB")
 
 #H265 - VP9
 video_input_path = os.path.join(input_path, "h265.mp4")
-video_output_path = os.path.join(output_path, "h2645_vp9.webm")
+video_output_path = os.path.join(output_path, "h265_vp9.webm")
 average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
 print(f"Média PSNR: {average_psnr_value} dB")
 
-'''
 #TESTES AV1
 #H264 - AV1
 video_input_path = os.path.join(input_path, "h264.mp4")
 video_output_path = os.path.join(output_path, "h264_av1.webm")
-reencoding_test(codec_configs["av1"], video_input_path, video_output_path)
+average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
+print(f"Média PSNR: {average_psnr_value} dB")
 
 #H264+ - AV1
 video_input_path = os.path.join(input_path, "h264+.mp4")
 video_output_path = os.path.join(output_path, "h264+_av1.webm")
-reencoding_test(codec_configs["av1"], video_input_path, video_output_path)
+average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
+print(f"Média PSNR: {average_psnr_value} dB")
 
 #H265 - AV1
 video_input_path = os.path.join(input_path, "h265.mp4")
 video_output_path = os.path.join(output_path, "h265_av1.webm")
-reencoding_test(codec_configs["av1"], video_input_path, video_output_path)
+average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
+print(f"Média PSNR: {average_psnr_value} dB")
+
 '''

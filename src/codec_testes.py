@@ -16,10 +16,13 @@ codec_configs = {
 
 #caminhos das pastas
 current_path = os.path.dirname(os.path.abspath(__file__))
-input_path = os.path.join(current_path, "..", "videos")
-output_path = os.path.join(current_path, "..", "output")
 
-'''
+#input_path = os.path.join(current_path, "..", "videos")
+#output_path = os.path.join(current_path, "..", "output")
+
+input_path = os.path.join(current_path, "..", "5_trimmed_videos")
+output_path = os.path.join(current_path, "..", "5_trimmed_output")
+
 #TESTES VP8
 #H264 - VP8
 video_input_path = os.path.join(input_path, "h264.mp4")
@@ -36,9 +39,6 @@ video_input_path = os.path.join(input_path, "h265.mp4")
 video_output_path = os.path.join(output_path, "h265_vp8.webm")
 reencoding_test(codec_configs["vp8"], video_input_path, video_output_path)
 
-
-
-
 #TESTES VP9
 #H264 - VP9
 video_input_path = os.path.join(input_path, "h264.mp4")
@@ -52,9 +52,8 @@ reencoding_test(codec_configs["vp9"], video_input_path, video_output_path)
 
 #H265 - VP9
 video_input_path = os.path.join(input_path, "h265.mp4")
-video_output_path = os.path.join(output_path, "h2645_vp9.webm")
+video_output_path = os.path.join(output_path, "h2654_vp9.webm")
 reencoding_test(codec_configs["vp9"], video_input_path, video_output_path)
-'''
 
 #TESTES AV1
 #H264 - AV1
@@ -71,4 +70,3 @@ reencoding_test(codec_configs["av1"], video_input_path, video_output_path)
 video_input_path = os.path.join(input_path, "h265.mp4")
 video_output_path = os.path.join(output_path, "h265_av1.webm")
 reencoding_test(codec_configs["av1"], video_input_path, video_output_path)
-
