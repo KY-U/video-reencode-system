@@ -10,7 +10,7 @@ class VideoReencoder:
 
     def reencode(self, input_path: str, output_path: str):
         codec = self.encode_config.get_codec()
-        mode = self.encode_config.get_mode
+        mode = self.encode_config.get_mode()
         bitrate = self.encode_config.get_bitrate()
         max_rate = self.encode_config.get_max_bitrate()
         crf = self.encode_config.get_crf()
@@ -19,11 +19,10 @@ class VideoReencoder:
         #dicionário de argumentos
         output_args = {
         'vcodec': codec,
-        #'b:v': bitrate, 
-        #'maxrate': '300k',
         'crf': crf,
         'threads': self.num_threads,
         }
+
         #configuração de codec
         if codec == "libaom-av1":
             output_args['cpu-used'] = speed  #av1
@@ -31,13 +30,17 @@ class VideoReencoder:
             output_args['speed'] = speed  #vp8 e vp9
 
         #configuração de bitrate
-        if mode == "variable":
-            output_args['b:v': bitrate,]
-            output_args['maxrate': max_rate,]
+        #para variable e fix seta bitrate
+        if mode != "unset":
+            output_args['b:v'] = bitrate
+        #bitrate variável
+        if mode == "variable" and max_rate != "-1":
+            #bitrate max opcional
+            output_args['maxrate'] = max_rate
+        #bitrate fixo        
         elif mode == "fix":
-            output_args['b:v': bitrate,]
-            output_args['maxrate': bitrate]
-            output_args['buffsize': bitrate]
+            output_args['maxrate'] = bitrate
+            output_args['bufsize'] = bitrate
         #se for 'unset' nao seta bitrate
         
         #rodando comando ffmpeg
@@ -65,11 +68,13 @@ class VideoReencoder:
         self.reencode(video_input_path, video_output_path)
         end_time = time.time()
         duration = end_time - start_time
+        duration = f"{duration:.0f}"
 
         #calculando tamanho do arquivo comprimido
         file_size = os.path.getsize(video_output_path) #bytes
         #file_size_kb = file_size / 1024 # kb
         file_size_mb = file_size / (1024 * 1024) # mb
+        file_size_mb = f"{file_size_mb:.2f}"
         #print(f"Tempo de reencode de {video}: {duration:.2f} segundos")
         with open('output.txt', 'a') as file:
             file.write("Tempo de reencode de " + video + ": "+ str(duration) + " Tamanho: " + str(file_size_mb) + " Mb\n")

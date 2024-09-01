@@ -13,8 +13,8 @@ end = '00:5:00'
 
 #caminhos das pastas
 current_path = os.path.dirname(os.path.abspath(__file__))
-input_path = os.path.join(current_path, "..", "videos")
-output_path = os.path.join(current_path, "..", "5_trimmed_videos")
+input_path = os.path.join(current_path, "..", "..", "videos")
+output_path = os.path.join(current_path, "..", "..", "5_trimmed_videos")
 
 #cortando vídeos
 video_input_path = os.path.join(input_path, "h264.mp4")

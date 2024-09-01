@@ -52,15 +52,19 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 #output_path = os.path.join(current_path, "..", "output")
 
 input_path = os.path.join(current_path, "..", "5_trimmed_videos")
-output_path = os.path.join(current_path, "..", "5_refinamento_output2")
+output_path = os.path.join(current_path, "..", "5_refinamento_output")
 
 video_input_path = os.path.join(input_path, "h265.mp4")
 
 for i in range(1, 11):
     file_name = f"h265_av1_{i}.webm"
     video_output_path = os.path.join(output_path, file_name)
-    average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
-    print(f"Média PSNR {i}: {average_psnr_value} dB")
+    if os.path.exists(video_output_path):
+        average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
+        print(f"Média PSNR {i}: {average_psnr_value} dB")
+    else:
+        print(f"Arquivo {file_name} não encontrado")
+        
 
 
 '''
