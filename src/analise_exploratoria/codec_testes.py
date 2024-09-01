@@ -15,9 +15,9 @@ def reencoding_test(codec_config, input_file, output_file, num_threads=3):
     reencoder.reencode_timer(input_file, output_file)
 
 codec_configs = {
-    "vp8": VP8EncodeConfig(bitrate="100k", crf=30, speed=16),
-    "vp9": VP9EncodeConfig(bitrate="100k", crf=30, speed=8),
-    "av1": AV1EncodeConfig(bitrate="100k", crf=30, speed=8)  
+    "vp8": VP8EncodeConfig(mode = "variable", bitrate="100k", max_bitrate="300k", crf=30, speed=16),
+    "vp9": VP9EncodeConfig(mode = "variable", bitrate="100k", max_bitrate="300k", crf=30, speed=8),
+    "av1": AV1EncodeConfig(mode = "variable", bitrate="100k", max_bitrate="300k", crf=30, speed=8)  
 }
 
 #caminhos das pastas
