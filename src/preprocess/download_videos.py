@@ -1,4 +1,9 @@
 import os
+import sys
+
+#adicionando o diretório raiz ao path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from google.cloud import storage
 
 def main():

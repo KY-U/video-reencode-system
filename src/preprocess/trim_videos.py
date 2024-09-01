@@ -1,5 +1,9 @@
 import os
 import ffmpeg
+import sys
+
+#adicionando o diretório raiz ao path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 def trim_video(video_input_path, video_output_path, start, end):
     (
