@@ -7,7 +7,7 @@ def main():
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
-    videos_dir = os.path.join(base_dir, '..', 'videos')
+    videos_dir = os.path.join(base_dir, '..', '..', 'videos')
     print(f"videos_dir: {videos_dir}")
 
     #Vídeos teste

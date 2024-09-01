@@ -1,6 +1,10 @@
 import cv2
 import numpy as np
 import os
+import sys
+
+#adicionando o diretório raiz ao path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 def calculate_psnr(original_frame, compressed_frame):
     original = np.float32(original_frame)
@@ -51,8 +55,8 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 #input_path = os.path.join(current_path, "..", "videos")
 #output_path = os.path.join(current_path, "..", "output")
 
-input_path = os.path.join(current_path, "..", "5_trimmed_videos")
-output_path = os.path.join(current_path, "..", "5_refinamento_output")
+input_path = os.path.join(current_path, "..", "..", "5_trimmed_videos")
+output_path = os.path.join(current_path, "..", "..", "5_refinamento_output")
 
 video_input_path = os.path.join(input_path, "h265.mp4")
 

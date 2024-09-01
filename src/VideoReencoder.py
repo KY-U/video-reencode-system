@@ -1,4 +1,3 @@
-import subprocess
 from EncodeConfig.EncodeConfig import EncodeConfig
 import ffmpeg
 import time 
@@ -23,7 +22,7 @@ class VideoReencoder:
         'threads': self.num_threads,
         }
 
-        #configuração de codec
+        #configuração específica de codec
         if codec == "libaom-av1":
             output_args['cpu-used'] = speed  #av1
         else:

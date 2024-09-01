@@ -1,8 +1,14 @@
+import os
+import sys
+
+#adicionando o diretório raiz ao path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from EncodeConfig.VP8EncodeConfig import VP8EncodeConfig
 from EncodeConfig.VP9EncodeConfig import VP9EncodeConfig
 from EncodeConfig.AV1EncodeConfig import AV1EncodeConfig
 from VideoReencoder import VideoReencoder
-import os
+
 
 def reencoding_test(codec_config, input_file, output_file, num_threads=3):
     reencoder = VideoReencoder(codec_config, num_threads=num_threads)
@@ -17,11 +23,13 @@ codec_configs = {
 #caminhos das pastas
 current_path = os.path.dirname(os.path.abspath(__file__))
 
+
 #input_path = os.path.join(current_path, "..", "videos")
 #output_path = os.path.join(current_path, "..", "output")
 
-input_path = os.path.join(current_path, "..", "5_trimmed_videos")
-output_path = os.path.join(current_path, "..", "5_trimmed_output")
+
+input_path = os.path.join(current_path, "..", "..","5_trimmed_videos")
+output_path = os.path.join(current_path, "..", "..","5_trimmed_output")
 
 #TESTES VP8
 #H264 - VP8
