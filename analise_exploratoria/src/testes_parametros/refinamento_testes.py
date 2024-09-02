@@ -29,7 +29,7 @@ codec_configs = {
 #caminhos das pastas
 current_path = os.path.dirname(os.path.abspath(__file__))
 
-input_path = os.path.join(current_path, "..", "..", "5_trimmed_videos")
+input_path = os.path.join(current_path, "..", "..", "videos")
 output_path = os.path.join(current_path, "..", "..", "5_refinamento_output")
 
 #testes
@@ -38,5 +38,5 @@ video_input_path = os.path.join(input_path, "h265.mp4")
 for i in range(1, 11):
     file_name = f"h265_av1_{i}.webm"
     video_output_path = os.path.join(output_path, file_name)
-    if os.path.exists(video_output_path):
+    if os.path.exists(video_input_path):
         reencoding_test(codec_configs[i], video_input_path, video_output_path)

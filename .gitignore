@@ -8,6 +8,8 @@ videos/
 5_refinamento_output/
 5_refinamento_output2/
 5_refinamento_output_crf/
+downloads/
+processed_videos/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

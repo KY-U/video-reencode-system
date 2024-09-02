@@ -13,6 +13,11 @@ def main():
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
     videos_dir = os.path.join(base_dir, '..', '..', 'videos')
+
+    if not os.path.exists(videos_dir):
+        os.makedirs(videos_dir)
+
+
     print(f"videos_dir: {videos_dir}")
 
     #Vídeos teste

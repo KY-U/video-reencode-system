@@ -127,3 +127,6 @@ Tempo de reencode de h265_av1_6.webm: 263 Tamanho: 1.39 Mb
 Tempo de reencode de h265_av1_5.webm: 510 Tamanho: 1.42 Mb
 Tempo de reencode de h265_av1_4.webm: 677 Tamanho: 1.38 Mb
 Tempo de reencode de h265_av1_3.webm: 1829 Tamanho: 1.36 Mb
+
+testes aplicação final MAX 300THREADS
+Tempo de reencode de h265_av1_9.webm: 776 Tamanho: 4.88 Mb
