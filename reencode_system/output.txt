@@ -1,0 +1,5 @@
+Tempo de reencode de h264.webm: 775 segundos, Tamanho: 5.745728492736816 Mb
+Tempo de reencode de h264+.webm: 537 segundos, Tamanho: 3.289675712585449 Mb
+Tempo de reencode de h264.webm: 615 segundos, Tamanho: 5.745728492736816 Mb
+Tempo de reencode de h265.webm: 746 segundos, Tamanho: 4.884860038757324 Mb
+Tempo de reencode de h265.webm: 783 segundos, Tamanho: 4.884860038757324 Mb
