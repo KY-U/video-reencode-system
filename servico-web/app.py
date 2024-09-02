@@ -2,6 +2,7 @@ from services.VideoReencoder import VideoReencoder
 from services.VideoReencodeMonitor import VideoReencodeMonitor
 from services.EncodeConfigFactory import EncodeConfigFactory
 from services.VideoManager import VideoManager
+from services.VideoReencoderController import VideoReencoderController
 from config.settings  import Settings
 
 from flask import Flask, request, jsonify
@@ -18,24 +19,11 @@ def reencode_video():
     video_source = data.get('video_source')
     if not video_source:
         return jsonify({"error": "No video source provided"}), 400
-
-    #Baixar vídeo
-    video_manager = VideoManager(video_source)
-    video_manager.download_video()
-
-    #caminhos
-    video_path = video_manager.get_video_path()
-    output_path = video_manager.get_output_video_path()
-
-    #Instanciando as configurações de encoding e o encoder
-    encode_config = EncodeConfigFactory.create_encode_config()
-    reencoder = VideoReencoder(encode_config) 
-
-    # Monitorando o reencode
-    monitor = VideoReencodeMonitor(reencoder)
-    monitor.reencode_with_monitoring(video_path, output_path)
-
-    return jsonify({"message": "Reencode completo!", "output_path": output_path})
+    
+    reencode_controller = VideoReencoderController(video_source)
+    response = reencode_controller.reencode_video()
+    return response
+    
 
 if __name__ == '__main__':
     settings = Settings()  #carrega as configurações do .env
