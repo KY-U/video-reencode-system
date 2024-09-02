@@ -66,6 +66,8 @@ for i in range(1, 11):
     if os.path.exists(video_output_path):
         average_psnr_value = calculate_video_psnr(video_input_path, video_output_path)
         print(f"Média PSNR {i}: {average_psnr_value} dB")
+        with open('psnr_output.txt', 'a') as file:
+            file.write("Média PSNR " + str(i) + ":" + str(average_psnr_value) +  "\n")
     else:
         print(f"Arquivo {file_name} não encontrado")
         

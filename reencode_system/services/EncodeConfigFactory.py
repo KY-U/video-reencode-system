@@ -6,13 +6,13 @@ from services.AV1EncodeConfig import AV1EncodeConfig
 class EncodeConfigFactory:
     @staticmethod
     def create_encode_config():
-        codec = os.getenv('CODEC', 'libaom-av1')
-        mode = os.getenv('MODE', 'variable')
-        bitrate = os.getenv('BITRATE', '100k')
-        max_bitrate = os.getenv('MAX_BITRATE', '300k')
-        crf = int(os.getenv('CRF', 63))
-        speed = os.getenv('SPEED', '8')
-        num_threads = int(os.getenv('NUM_THREADS', '3'))
+        codec = os.environ.get('CODEC', 'libaom-av1')
+        mode = os.environ.get('MODE', 'variable')
+        bitrate = os.environ.get('BITRATE', '100k')
+        max_bitrate = os.environ.get('MAX_BITRATE', '-1')
+        crf = int(os.environ.get('CRF', 63))
+        speed = os.environ.get('SPEED', '8')
+        num_threads = int(os.environ.get('NUM_THREADS', '-1'))
         if codec == 'libvpx-vp8':
             return VP8EncodeConfig( mode, bitrate, max_bitrate, crf, speed, num_threads)
         elif codec == 'libvpx-vp9':
