@@ -21,5 +21,6 @@ class VideoReencodeMonitor:
         file_size = os.path.getsize(output_path) #bytes
         file_size_mb = file_size / (1024 * 1024) # mb
 
+        #escrevendo no arquivo de log
         with open('output.txt', 'a') as file:
             file.write(f"Tempo de reencode de {video}: {duration:.0f} segundos, Tamanho: {file_size_mb} Mb\n")

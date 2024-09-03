@@ -14,8 +14,9 @@ class TestVideoReencoder(unittest.TestCase):
     @patch('ffmpeg.run')
     @patch('ffmpeg.output')
     @patch('ffmpeg.input')
+    #testa se o processo de reencode é chamado corretamente
     def test_reencode_process(self, mock_ffmpeg_input, mock_ffmpeg_output, mock_ffmpeg_run):
-        # Mockando a configuração
+        #mockando a configuração
         config = Mock(spec=EncodeConfig)
         config.get_codec.return_value = 'libaom-av1'
         config.get_mode.return_value = 'variable'
@@ -27,7 +28,7 @@ class TestVideoReencoder(unittest.TestCase):
 
 
         reencoder = VideoReencoder(config)
-        reencoder.reencode('input.mp4', 'output.mp4')
+        reencoder.reencode('input.mp4', 'output.webm')
 
 
         output_args = {
@@ -43,13 +44,13 @@ class TestVideoReencoder(unittest.TestCase):
 
         mock_ffmpeg_input.assert_called_with('input.mp4')
         mock_ffmpeg_output.assert_called_with(
-            'output.mp4',
+            'output.webm',
             **output_args
         )
         mock_ffmpeg_run.assert_called_once_with(overwrite_output=True)
 
 
-
+    #testa se a configuração é inicializada corretamente
     def test_initialization(self):
         config = Mock(spec=EncodeConfig)
         reencoder = VideoReencoder(config)

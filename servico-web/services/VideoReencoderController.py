@@ -5,6 +5,7 @@ from services.EncodeConfigFactory import EncodeConfigFactory
 from services.VideoManager import VideoManager
 import os
 
+#controlador para reencode de vídeo
 class VideoReencoderController:
     def __init__(self, video_source: str):
         self.video_source = video_source
@@ -18,9 +19,8 @@ class VideoReencoderController:
         video_path = video_manager.get_video_path()
         output_path = video_manager.get_output_video_path()
 
-        #instanciando as configurações de encoding e o encoder
-        encode_config = EncodeConfigFactory.create_encode_config()
-        reencoder = VideoReencoder(encode_config) 
+        #instanciando o encoder
+        reencoder = VideoReencoder(EncodeConfigFactory.create_encode_config()) 
 
         #monitorando o reencode
         monitor = VideoReencodeMonitor(reencoder)

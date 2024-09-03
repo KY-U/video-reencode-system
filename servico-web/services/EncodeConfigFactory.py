@@ -3,7 +3,9 @@ from services.VP8EncodeConfig import VP8EncodeConfig
 from services.VP9EncodeConfig import VP9EncodeConfig
 from services.AV1EncodeConfig import AV1EncodeConfig
 
+#classe fábrica para criar configurações de encode
 class EncodeConfigFactory:
+    #configuração de encode é criada a partir de variáveis de ambiente
     @staticmethod
     def create_encode_config():
         codec = os.environ.get('CODEC', 'libaom-av1')

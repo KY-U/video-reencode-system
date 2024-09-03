@@ -40,9 +40,10 @@ class VideoManager:
     
     def get_output_video_path(self):
         video_title = self.video_name.split(".")[0]
-        #jeito melhor?
+        #todos os codecs finais suportam o formato webm
         return os.path.join(self.processed_videos_dir, f"{video_title}.webm")
     
+    #baixa o vídeo do bucket
     def download_video(self):
         client = storage.Client.create_anonymous_client()
         bucket = client.bucket(self.bucket_name)

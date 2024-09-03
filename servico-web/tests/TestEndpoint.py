@@ -10,6 +10,7 @@ class TestReencodeEndpoint(unittest.TestCase):
         self.app = app.test_client()
         self.app.testing = True
 
+    #testa se o endpoint reencode retorna status 400 para formato de mensagem inválido
     def test_reencode_invalid_data(self):
         client = app.test_client()
 
@@ -19,7 +20,7 @@ class TestReencodeEndpoint(unittest.TestCase):
             'output_path': 'output.mp4',
         }
 
-        # Chamando o endpoint
+        #chamando o endpoint
         response = client.post('/reencode', json=data)
 
         #verificando o status de resposta e mensagem de erro

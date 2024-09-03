@@ -3,6 +3,7 @@ import os
 
 class Settings:
     def __init__(self):
+        #carrega .env, se não encontrar, carrega as variáveis padrão
         load_dotenv()
         #por algum motivo, os.getenv sempre retorna None
         self.APP_PORT = int(os.environ.get("APP_PORT", 5000))

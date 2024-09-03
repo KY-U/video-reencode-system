@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+#classe abstrata para configuracao de encoding
 class EncodeConfig(ABC):
     def __init__(self, codec: str, mode: str="variable", bitrate: str="100k", max_bitrate: str="300k", crf: int=30, speed: str=8, num_threads: int=-1):
         self._codec = codec

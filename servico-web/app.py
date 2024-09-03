@@ -15,16 +15,18 @@ app = Flask(__name__)
 
 @app.route('/reencode', methods=['POST'])
 def reencode_video():
+    #recebe o vídeo a ser reencoded
     data = request.get_json()
     video_source = data.get('video_source')
     if not video_source:
         return jsonify({"error": "No video source provided"}), 400
     
+    #controlador para reencode de vídeo
     reencode_controller = VideoReencoderController(video_source)
     response = reencode_controller.reencode_video()
     return response
     
 
 if __name__ == '__main__':
-    settings = Settings()  #carrega as configurações do .env
-    app.run(host='0.0.0.0', port=settings.APP_PORT, threaded=True)
+    settings = Settings()  #carrega as configurações do .env, se não houver, carrega as configurações padrão
+    app.run(host='0.0.0.0', port=settings.APP_PORT, threaded=True) #threaded=True permite múltiplas requisições simultâneas

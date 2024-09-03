@@ -6,7 +6,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from unittest.mock import patch
 from services.EncodeConfigFactory import EncodeConfigFactory
 
-class TestEncodeConfigFactory(unittest.TestCase):   
+class TestEncodeConfigFactory(unittest.TestCase): 
+    #testa se a configuração padrão é criada corretamente pela factory  
     @patch('config.settings.os.getenv')
     def test_default_encode_config(self, mock_getenv):
         #mock_getenv.side_effect = lambda key, default=None: default

@@ -1,7 +1,9 @@
 import requests
 import unittest
 
+#
 class   TestPostRequest(unittest.TestCase):
+    #testa uma requisição de reencode de vídeo com um vídeo de exemplo
     def test_post_request(self):
         url = 'http://127.0.0.1:5000/reencode'
 

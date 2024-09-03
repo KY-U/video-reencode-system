@@ -5,8 +5,7 @@ import ffmpeg
 class VideoReencoder:
     def __init__(self, encode_config: EncodeConfig):
         self.encode_config = encode_config
-        
-
+    
     def reencode(self, input_path: str, output_path: str):
         codec = self.encode_config.get_codec()
         mode = self.encode_config.get_mode()
@@ -20,22 +19,19 @@ class VideoReencoder:
         output_args = {
         'vcodec': codec,
         'crf': crf,
-        #threads 'threads': self.num_threads,
         }
 
-        #threads
-        print(num_threads)
+        #caso o número de threads esteja definido
         if num_threads != -1:
             output_args['threads'] = num_threads
 
-        #configuração específica de codec
+        #configuração 'Deadline' específica de codec
         if codec == "libaom-av1":
             output_args['cpu-used'] = speed  #av1
         else:
             output_args['speed'] = speed  #vp8 e vp9
 
-        #configuração de bitrate
-        #para variable e fix seta bitrate
+        #para modos variable e fix seta bitrate
         if mode != "unset":
             output_args['b:v'] = bitrate
         #bitrate variável
@@ -61,4 +57,4 @@ class VideoReencoder:
                 .run(overwrite_output=True)  #sobrescrever o arquivo de saída se ele já existir
             )
         except ffmpeg.Error as e:
-            print(f"Error occurred: {e.stderr.decode()}")
+            print(f"Erro Ocorreu: {e.stderr.decode()}")

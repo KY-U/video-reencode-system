@@ -13,7 +13,6 @@ from unittest.mock import patch
 
 class TestVideoManager(unittest.TestCase):
     #testa caminho do vídeo gerado
-
     #dando problema com o patch
     @patch('video_manager.VideoManager.download_video')
     def test_video_path_generation(self, mock_download_video):
